@@ -74,8 +74,10 @@ export default function Navbar({ locale, currentPath }: NavbarProps) {
                 alt="Tortilleria El Rancherito logo"
                 width={56}
                 height={56}
-                className="h-14 w-14 rounded-full object-cover ring-2 ring-white/20"
+                className="rounded-full object-cover"
+                style={{ width: 56, height: 56 }}
                 priority
+                unoptimized
               />
             </Link>
 
@@ -129,13 +131,13 @@ export default function Navbar({ locale, currentPath }: NavbarProps) {
                 </Link>
               </div>
 
-              {/* Order Online Button — desktop only */}
+              {/* View Menu Button — desktop only */}
               <Link
                 href={`${prefix}/menu`}
                 className="hidden md:inline-flex items-center px-5 py-2.5 bg-primary hover:bg-primary-dark text-light font-bold text-sm uppercase tracking-wider rounded-lg transition-colors duration-200"
                 style={{ fontFamily: 'var(--font-display)' }}
               >
-                {t.nav.orderOnline}
+                {t.nav.viewMenu}
               </Link>
 
               {/* Hamburger — mobile only */}

@@ -14,6 +14,7 @@ const translations = {
       gunBarrelCity: 'Gun Barrel City',
       about: 'About',
       orderOnline: 'Order Online',
+      viewMenu: 'View Menu',
     },
     // Hero
     hero: {
@@ -130,6 +131,7 @@ const translations = {
       gunBarrelCity: 'Gun Barrel City',
       about: 'Nosotros',
       orderOnline: 'Ordenar en Línea',
+      viewMenu: 'Ver Menú',
     },
     hero: {
       headline: 'Fresco. Hecho a Mano. Auténtico.',

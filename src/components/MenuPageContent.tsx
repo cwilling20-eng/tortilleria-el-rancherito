@@ -23,7 +23,7 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
   // IntersectionObserver to track which category section is in view
   useEffect(() => {
     const observerOptions: IntersectionObserverInit = {
-      rootMargin: '-120px 0px -60% 0px',
+      rootMargin: '-160px 0px -60% 0px',
       threshold: 0,
     };
 
@@ -59,7 +59,7 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
 
     const el = sectionRefs.current[categoryId];
     if (el) {
-      const yOffset = -100;
+      const yOffset = -140;
       const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -71,16 +71,17 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
 
   return (
     <div className="relative">
-      {/* Location Selector */}
-      <div className="bg-light py-6">
-        <div className="mx-auto max-w-4xl px-4">
-          <p className="mb-3 text-center text-sm font-medium text-text-secondary uppercase tracking-wider">
-            {t.menu.viewingLocation}
-          </p>
-          <div className="flex items-center justify-center gap-3">
+      {/* Sticky Location Selector + Category Navigation */}
+      <div className="sticky top-20 z-30 bg-light/95 backdrop-blur-md border-b border-dark/10 shadow-sm">
+        {/* Location Selector */}
+        <div className="mx-auto max-w-4xl px-4 pt-3 pb-2">
+          <div className="flex items-center justify-center gap-2">
+            <span className="text-xs font-medium text-text-secondary uppercase tracking-wider mr-1">
+              {t.menu.viewingLocation}
+            </span>
             <button
               onClick={() => setSelectedLocation('gun-barrel-city')}
-              className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+              className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-200 ${
                 selectedLocation === 'gun-barrel-city'
                   ? 'bg-primary text-light shadow-md'
                   : 'border border-dark/20 bg-transparent text-text-secondary hover:border-primary'
@@ -90,7 +91,7 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
             </button>
             <button
               onClick={() => setSelectedLocation('red-oak')}
-              className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200 ${
+              className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition-all duration-200 ${
                 selectedLocation === 'red-oak'
                   ? 'bg-primary text-light shadow-md'
                   : 'border border-dark/20 bg-transparent text-text-secondary hover:border-primary'
@@ -100,16 +101,14 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Sticky Category Navigation */}
-      <div className="sticky top-16 z-30 bg-light/80 backdrop-blur-md border-b border-dark/10">
+        {/* Category Navigation */}
         <div
           ref={categoryNavRef}
           className="overflow-x-auto scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          <div className="flex gap-1 min-w-max px-4 py-3">
+          <div className="flex gap-1 min-w-max px-4 py-2">
             {menuCategories.map((cat) => (
               <button
                 key={cat.id}
