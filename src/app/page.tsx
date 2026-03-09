@@ -85,96 +85,103 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════════
-            SECTION 2 — Signature Products
+            SECTION 2 — Made From Scratch, Every Day
             ═══════════════════════════════════════════ */}
-        <section className="bg-[#FAF7F2] py-20 md:py-28">
-          <div className="max-w-7xl mx-auto px-6">
-            <h2
-              className="font-heading text-[#1A1A1A] border-l-4 border-[#F47A1F] pl-4 mb-16"
-              style={{ fontSize: 'clamp(1.875rem, 5vw, 3rem)' }}
-            >
-              {t.signature.sectionTitle}
-            </h2>
-
-            {/* Row 1 — Image Left, Text Right */}
+        {/* Section heading — full-width dark bar */}
+        <div className="bg-[#1A1A1A] py-14 md:py-20">
+          <div className="max-w-7xl mx-auto px-6 text-center">
             <ScrollReveal>
-              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16 mb-20">
-                <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/tortillas.jpg"
-                    alt="Fresh handmade corn and flour tortillas at Tortilleria El Rancherito"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover aspect-[4/3]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <h3
-                    className="font-heading text-[#1A1A1A] mb-4"
-                    style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
-                  >
-                    {t.signature.tortillas.title}
-                  </h3>
-                  <p className="text-[#6B6560] text-base md:text-lg leading-relaxed max-w-lg">
-                    {t.signature.tortillas.description}
-                  </p>
-                </div>
-              </div>
+              <h2
+                className="font-heading text-[#FAF7F2]"
+                style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}
+              >
+                {t.signature.sectionTitle}
+              </h2>
+              <div className="mx-auto mt-4 accent-stripe-wide" />
             </ScrollReveal>
+          </div>
+        </div>
 
-            {/* Row 2 — Text Left, Image Right */}
-            <ScrollReveal>
-              <div className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 mb-20">
-                <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/barbacoa.jpg"
-                    alt="Authentic street tacos with barbacoa and handmade tortillas"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover aspect-[4/3]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <h3
-                    className="font-heading text-[#1A1A1A] mb-4"
-                    style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
-                  >
-                    {t.signature.tacos.title}
-                  </h3>
-                  <p className="text-[#6B6560] text-base md:text-lg leading-relaxed max-w-lg">
-                    {t.signature.tacos.description}
-                  </p>
-                </div>
-              </div>
+        {/* Row 1 — Tortillas: Full-bleed image left, text on dark right */}
+        <section className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+          <ScrollReveal className="relative overflow-hidden">
+            <Image
+              src="/images/tortillas.jpg"
+              alt="Fresh handmade corn and flour tortillas at Tortilleria El Rancherito"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover md:absolute md:inset-0 aspect-[4/3] md:aspect-auto"
+              loading="lazy"
+            />
+          </ScrollReveal>
+          <div className="bg-[#1A1A1A] flex items-center px-8 md:px-16 py-14 md:py-20">
+            <ScrollReveal direction="right">
+              <div className="accent-stripe-inline mb-6" />
+              <h3
+                className="font-heading text-[#F47A1F] mb-4"
+                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+              >
+                {t.signature.tortillas.title}
+              </h3>
+              <p className="text-[#FAF7F2]/80 text-base md:text-lg leading-relaxed max-w-md">
+                {t.signature.tortillas.description}
+              </p>
             </ScrollReveal>
+          </div>
+        </section>
 
-            {/* Row 3 — Image Left, Text Right */}
-            <ScrollReveal>
-              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-                <div className="w-full md:w-1/2 rounded-lg overflow-hidden">
-                  <Image
-                    src="/images/pollo-asado.jpg"
-                    alt="Mexican grocery products and fresh tortillas to take home"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover aspect-[4/3]"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="w-full md:w-1/2">
-                  <h3
-                    className="font-heading text-[#1A1A1A] mb-4"
-                    style={{ fontSize: 'clamp(1.5rem, 4vw, 2.25rem)' }}
-                  >
-                    {t.signature.grocery.title}
-                  </h3>
-                  <p className="text-[#6B6560] text-base md:text-lg leading-relaxed max-w-lg">
-                    {t.signature.grocery.description}
-                  </p>
-                </div>
-              </div>
+        {/* Row 2 — Tacos: Text on warm white left, image right */}
+        <section className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+          <div className="bg-[#FAF7F2] flex items-center px-8 md:px-16 py-14 md:py-20 order-2 md:order-1">
+            <ScrollReveal direction="left">
+              <div className="accent-stripe-inline mb-6" />
+              <h3
+                className="font-heading text-[#1A1A1A] mb-4"
+                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+              >
+                {t.signature.tacos.title}
+              </h3>
+              <p className="text-[#6B6560] text-base md:text-lg leading-relaxed max-w-md">
+                {t.signature.tacos.description}
+              </p>
+            </ScrollReveal>
+          </div>
+          <ScrollReveal className="relative overflow-hidden order-1 md:order-2">
+            <Image
+              src="/images/barbacoa.jpg"
+              alt="Authentic street tacos with barbacoa and handmade tortillas"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover md:absolute md:inset-0 aspect-[4/3] md:aspect-auto"
+              loading="lazy"
+            />
+          </ScrollReveal>
+        </section>
+
+        {/* Row 3 — Grocery: Full-bleed image left, text on dark right */}
+        <section className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+          <ScrollReveal className="relative overflow-hidden">
+            <Image
+              src="/images/pollo-asado.jpg"
+              alt="Mexican grocery products and fresh tortillas to take home"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover md:absolute md:inset-0 aspect-[4/3] md:aspect-auto"
+              loading="lazy"
+            />
+          </ScrollReveal>
+          <div className="bg-[#1A1A1A] flex items-center px-8 md:px-16 py-14 md:py-20">
+            <ScrollReveal direction="right">
+              <div className="accent-stripe-inline mb-6" />
+              <h3
+                className="font-heading text-[#F47A1F] mb-4"
+                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+              >
+                {t.signature.grocery.title}
+              </h3>
+              <p className="text-[#FAF7F2]/80 text-base md:text-lg leading-relaxed max-w-md">
+                {t.signature.grocery.description}
+              </p>
             </ScrollReveal>
           </div>
         </section>
@@ -327,46 +334,47 @@ export default function HomePage() {
         </section>
 
         {/* ═══════════════════════════════════════════
-            SECTION 5 — Testimonials (Editorial Stacked)
+            SECTION 5 — Testimonials (Editorial Stacked / Dark)
             ═══════════════════════════════════════════ */}
-        <section className="bg-[#F0EBE3] py-20 md:py-28">
+        <section className="bg-[#1A1A1A] py-20 md:py-28">
           <div className="max-w-4xl mx-auto px-6">
             <h2
-              className="font-heading text-[#1A1A1A] border-l-4 border-[#F47A1F] pl-4 mb-16"
+              className="font-heading text-[#F47A1F] mb-4"
               style={{ fontSize: 'clamp(1.875rem, 5vw, 3rem)' }}
             >
               {t.testimonials.sectionTitle}
             </h2>
+            <div className="accent-stripe-wide mb-16" />
 
-            <div className="space-y-0">
-              {testimonials.map((review, index) => (
-                <ScrollReveal key={review.name} delay={index * 100}>
-                  <div
-                    className={`relative pl-8 py-10 ${
-                      index < testimonials.length - 1
-                        ? 'border-b border-[#F47A1F]/30'
-                        : ''
-                    }`}
+            {testimonials.map((review, index) => (
+              <ScrollReveal key={review.name} delay={index * 0.08}>
+                <div
+                  className={`relative py-10 md:py-12 ${
+                    index < testimonials.length - 1
+                      ? 'border-b border-white/10'
+                      : ''
+                  }`}
+                >
+                  <span
+                    className="font-serif text-7xl md:text-8xl text-[#F47A1F] leading-none block mb-4"
+                    aria-hidden="true"
                   >
-                    <span
-                      className="text-6xl text-[#F47A1F]/30 font-serif leading-none absolute -top-4 -left-2"
-                      aria-hidden="true"
-                    >
-                      &ldquo;
-                    </span>
-                    <blockquote className="text-[#1A1A1A] text-lg md:text-xl italic leading-relaxed max-w-2xl">
-                      {review.quote}
-                    </blockquote>
-                    <p className="font-heading text-lg text-[#1A1A1A] mt-4">
+                    &ldquo;
+                  </span>
+                  <blockquote className="text-[#FAF7F2] text-xl md:text-2xl leading-relaxed max-w-3xl">
+                    {review.quote}
+                  </blockquote>
+                  <div className="mt-6">
+                    <p className="font-heading text-lg tracking-widest text-[#FAF7F2]">
                       {review.name}
                     </p>
-                    <p className="text-[#6B6560] text-sm">
-                      &mdash; {review.platform} Review
+                    <p className="text-[#FAF7F2]/50 text-xs uppercase tracking-[0.2em] mt-1">
+                      {review.platform} Review
                     </p>
                   </div>
-                </ScrollReveal>
-              ))}
-            </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </section>
 

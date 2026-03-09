@@ -95,95 +95,99 @@ export default function HomePageEs() {
 
         <SectionDivider />
 
-        {/* ═══ What Makes Us Different ═══ */}
-        <section className="bg-light py-20">
-          <div className="mx-auto max-w-6xl px-4">
+        {/* ═══ Made From Scratch, Every Day ═══ */}
+        <div className="bg-dark py-14 md:py-20">
+          <div className="mx-auto max-w-7xl px-6 text-center">
             <ScrollReveal>
-              <h2 className="mb-4 text-center font-[family-name:var(--font-display)] text-3xl md:text-4xl text-dark uppercase">
+              <h2
+                className="font-[family-name:var(--font-display)] text-light"
+                style={{ fontSize: 'clamp(2.5rem, 7vw, 5rem)' }}
+              >
                 {t.signature.sectionTitle}
               </h2>
-              <div className="mx-auto mb-12 accent-stripe-wide" />
+              <div className="mx-auto mt-4 accent-stripe-wide" />
             </ScrollReveal>
+          </div>
+        </div>
 
-            <div className="space-y-16">
-              {/* Tortillas */}
-              <ScrollReveal>
-                <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
-                  <div className="lg:w-1/2">
-                    <div className="relative overflow-hidden rounded-lg">
-                      <Image
-                        src="/images/tortillas.jpg"
-                        alt="Tortillas frescas hechas a mano en nuestra tortilleria"
-                        width={700}
-                        height={500}
-                        className="h-auto w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div className="lg:w-1/2">
-                    <h3 className="mb-3 border-l-4 border-primary pl-4 font-[family-name:var(--font-display)] text-2xl md:text-3xl text-dark uppercase">
-                      {t.signature.tortillas.title}
-                    </h3>
-                    <p className="text-dark leading-relaxed">
-                      {t.signature.tortillas.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
+        <section className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+          <ScrollReveal className="relative overflow-hidden">
+            <Image
+              src="/images/tortillas.jpg"
+              alt="Tortillas frescas hechas a mano en nuestra tortilleria"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover md:absolute md:inset-0 aspect-[4/3] md:aspect-auto"
+              loading="lazy"
+            />
+          </ScrollReveal>
+          <div className="bg-dark flex items-center px-8 md:px-16 py-14 md:py-20">
+            <ScrollReveal direction="right">
+              <div className="accent-stripe-inline mb-6" />
+              <h3
+                className="font-[family-name:var(--font-display)] text-primary mb-4"
+                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+              >
+                {t.signature.tortillas.title}
+              </h3>
+              <p className="text-text-on-dark/80 text-base md:text-lg leading-relaxed max-w-md">
+                {t.signature.tortillas.description}
+              </p>
+            </ScrollReveal>
+          </div>
+        </section>
 
-              {/* Tacos */}
-              <ScrollReveal>
-                <div className="flex flex-col gap-8 lg:flex-row-reverse lg:items-center">
-                  <div className="lg:w-1/2">
-                    <div className="relative overflow-hidden rounded-lg">
-                      <Image
-                        src="/images/street-tacos.jpg"
-                        alt="Tacos auténticos de la calle con cilantro, cebolla y limón"
-                        width={700}
-                        height={500}
-                        className="h-auto w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div className="lg:w-1/2">
-                    <h3 className="mb-3 border-l-4 border-primary pl-4 font-[family-name:var(--font-display)] text-2xl md:text-3xl text-dark uppercase">
-                      {t.signature.tacos.title}
-                    </h3>
-                    <p className="text-dark leading-relaxed">
-                      {t.signature.tacos.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
+        <section className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+          <div className="bg-light flex items-center px-8 md:px-16 py-14 md:py-20 order-2 md:order-1">
+            <ScrollReveal direction="left">
+              <div className="accent-stripe-inline mb-6" />
+              <h3
+                className="font-[family-name:var(--font-display)] text-dark mb-4"
+                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+              >
+                {t.signature.tacos.title}
+              </h3>
+              <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-md">
+                {t.signature.tacos.description}
+              </p>
+            </ScrollReveal>
+          </div>
+          <ScrollReveal className="relative overflow-hidden order-1 md:order-2">
+            <Image
+              src="/images/street-tacos.jpg"
+              alt="Tacos auténticos de la calle con cilantro, cebolla y limón"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover md:absolute md:inset-0 aspect-[4/3] md:aspect-auto"
+              loading="lazy"
+            />
+          </ScrollReveal>
+        </section>
 
-              {/* Grocery */}
-              <ScrollReveal>
-                <div className="flex flex-col gap-8 lg:flex-row lg:items-center">
-                  <div className="lg:w-1/2">
-                    <div className="relative overflow-hidden rounded-lg">
-                      <Image
-                        src="/images/pollo-asado.jpg"
-                        alt="Tienda de productos mexicanos con artículos auténticos"
-                        width={700}
-                        height={500}
-                        className="h-auto w-full object-cover"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
-                  <div className="lg:w-1/2">
-                    <h3 className="mb-3 border-l-4 border-primary pl-4 font-[family-name:var(--font-display)] text-2xl md:text-3xl text-dark uppercase">
-                      {t.signature.grocery.title}
-                    </h3>
-                    <p className="text-dark leading-relaxed">
-                      {t.signature.grocery.description}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
+        <section className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+          <ScrollReveal className="relative overflow-hidden">
+            <Image
+              src="/images/pollo-asado.jpg"
+              alt="Tienda de productos mexicanos con artículos auténticos"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover md:absolute md:inset-0 aspect-[4/3] md:aspect-auto"
+              loading="lazy"
+            />
+          </ScrollReveal>
+          <div className="bg-dark flex items-center px-8 md:px-16 py-14 md:py-20">
+            <ScrollReveal direction="right">
+              <div className="accent-stripe-inline mb-6" />
+              <h3
+                className="font-[family-name:var(--font-display)] text-primary mb-4"
+                style={{ fontSize: 'clamp(1.75rem, 4vw, 2.75rem)' }}
+              >
+                {t.signature.grocery.title}
+              </h3>
+              <p className="text-text-on-dark/80 text-base md:text-lg leading-relaxed max-w-md">
+                {t.signature.grocery.description}
+              </p>
+            </ScrollReveal>
           </div>
         </section>
 
@@ -319,31 +323,46 @@ export default function HomePageEs() {
 
         <SectionDivider />
 
-        {/* ═══ Testimonials Section ═══ */}
-        <section className="bg-light-alt py-20">
-          <div className="mx-auto max-w-6xl px-4">
-            <ScrollReveal>
-              <h2 className="mb-4 text-center font-[family-name:var(--font-display)] text-3xl md:text-4xl text-dark uppercase">
-                {t.testimonials.sectionTitle}
-              </h2>
-              <div className="mx-auto mb-12 accent-stripe-wide" />
-            </ScrollReveal>
+        {/* ═══ Testimonials Section (Dark Editorial) ═══ */}
+        <section className="bg-dark py-20 md:py-28">
+          <div className="mx-auto max-w-4xl px-6">
+            <h2
+              className="font-[family-name:var(--font-display)] text-primary mb-4"
+              style={{ fontSize: 'clamp(1.875rem, 5vw, 3rem)' }}
+            >
+              {t.testimonials.sectionTitle}
+            </h2>
+            <div className="accent-stripe-wide mb-16" />
 
-            <div className="space-y-6">
-              {testimonials.map((review, idx) => (
-                <ScrollReveal key={idx}>
-                  <blockquote className="border-l-4 border-primary bg-light rounded-r-lg p-6 shadow-sm">
-                    <p className="text-dark leading-relaxed italic">
-                      &ldquo;{review.quote}&rdquo;
-                    </p>
-                    <footer className="mt-3 flex items-center gap-2">
-                      <span className="font-semibold text-dark">{review.name}</span>
-                      <span className="text-sm text-text-secondary">— {review.platform}</span>
-                    </footer>
+            {testimonials.map((review, idx) => (
+              <ScrollReveal key={idx} delay={idx * 0.08}>
+                <div
+                  className={`relative py-10 md:py-12 ${
+                    idx < testimonials.length - 1
+                      ? 'border-b border-white/10'
+                      : ''
+                  }`}
+                >
+                  <span
+                    className="font-serif text-7xl md:text-8xl text-primary leading-none block mb-4"
+                    aria-hidden="true"
+                  >
+                    &ldquo;
+                  </span>
+                  <blockquote className="text-light text-xl md:text-2xl leading-relaxed max-w-3xl">
+                    {review.quote}
                   </blockquote>
-                </ScrollReveal>
-              ))}
-            </div>
+                  <div className="mt-6">
+                    <p className="font-[family-name:var(--font-display)] text-lg tracking-widest text-light">
+                      {review.name}
+                    </p>
+                    <p className="text-light/50 text-xs uppercase tracking-[0.2em] mt-1">
+                      {review.platform} Review
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
           </div>
         </section>
 

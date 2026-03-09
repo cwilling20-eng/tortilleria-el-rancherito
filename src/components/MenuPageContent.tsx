@@ -106,10 +106,10 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
       <div className="sticky top-16 z-30 bg-light/80 backdrop-blur-md border-b border-dark/10">
         <div
           ref={categoryNavRef}
-          className="mx-auto max-w-4xl overflow-x-auto px-4 py-3 scrollbar-hide"
+          className="overflow-x-auto scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          <div className="flex gap-1 min-w-max">
+          <div className="flex gap-1 min-w-max px-4 py-3">
             {menuCategories.map((cat) => (
               <button
                 key={cat.id}
@@ -124,6 +124,8 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
                 {locale === 'es' ? cat.nameEs : cat.name}
               </button>
             ))}
+            {/* Spacer to prevent last item from clipping at edge */}
+            <div className="shrink-0 w-4" aria-hidden="true" />
           </div>
         </div>
       </div>

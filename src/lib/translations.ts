@@ -24,7 +24,7 @@ const translations = {
     },
     // Signature Products
     signature: {
-      sectionTitle: 'What Makes Us Different',
+      sectionTitle: 'Made From Scratch, Every Day.',
       tortillas: {
         title: 'Fresh Handmade Tortillas',
         description: 'Made from scratch every single day. Our corn and flour tortillas are pressed and cooked right here — soft, warm, and nothing like what you get from a store. This is what a real tortilleria does.',
@@ -138,7 +138,7 @@ const translations = {
       ctaRedOak: 'Red Oak',
     },
     signature: {
-      sectionTitle: 'Lo Que Nos Hace Diferentes',
+      sectionTitle: 'Hecho Desde Cero, Todos los Días.',
       tortillas: {
         title: 'Tortillas Frescas Hechas a Mano',
         description: 'Hechas desde cero todos los días. Nuestras tortillas de maíz y harina se prensan y cocinan aquí mismo — suavecitas, calientitas, y nada que ver con las de la tienda. Esto es lo que hace una tortilleria de verdad.',
