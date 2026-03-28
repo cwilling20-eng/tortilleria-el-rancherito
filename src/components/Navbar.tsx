@@ -66,16 +66,16 @@ export default function Navbar({ locale, currentPath }: NavbarProps) {
         aria-label="Main navigation"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-20 items-center justify-between">
+          <div className="flex h-36 items-center justify-between">
             {/* Logo */}
-            <Link href={`${prefix}/`} className="flex-shrink-0">
+            <Link href={`${prefix}/`} className="flex-shrink-0 py-3">
               <Image
-                src="/logos/logo.avif"
+                src="/logos/logo-circle.png"
                 alt="Tortilleria El Rancherito logo"
-                width={56}
-                height={56}
-                className="rounded-full object-cover"
-                style={{ width: 56, height: 56 }}
+                width={112}
+                height={112}
+                className="rounded-full object-cover mix-blend-lighten"
+                style={{ width: 112, height: 112 }}
                 priority
                 unoptimized
               />

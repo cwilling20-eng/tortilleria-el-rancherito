@@ -32,11 +32,11 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             <Link href={`${prefix}/`} className="inline-block mb-4">
               <Image
-                src="/logos/logo-black.jpg"
+                src="/logos/logo-circle.png"
                 alt="Tortilleria El Rancherito logo"
-                width={56}
-                height={56}
-                className="h-14 w-14 rounded-full object-cover"
+                width={112}
+                height={112}
+                className="h-28 w-28 rounded-full object-cover mix-blend-lighten"
               />
             </Link>
             <p

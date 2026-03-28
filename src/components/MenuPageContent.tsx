@@ -72,7 +72,7 @@ export default function MenuPageContent({ locale }: MenuPageContentProps) {
   return (
     <div className="relative">
       {/* Sticky Location Selector + Category Navigation */}
-      <div className="sticky top-20 z-30 bg-light/95 backdrop-blur-md border-b border-dark/10 shadow-sm">
+      <div className="sticky top-36 z-30 bg-light/95 backdrop-blur-md border-b border-dark/10 shadow-sm">
         {/* Location Selector */}
         <div className="mx-auto max-w-4xl px-4 pt-3 pb-2">
           <div className="flex items-center justify-center gap-2">

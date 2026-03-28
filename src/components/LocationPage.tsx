@@ -156,7 +156,7 @@ function LocationDetailsBar({
   t: ReturnType<typeof getTranslations>;
 }) {
   return (
-    <div className="sticky top-20 z-30 bg-dark text-light py-4">
+    <div className="sticky top-36 z-30 bg-dark text-light py-4">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Desktop layout */}
         <div className="hidden md:flex items-center justify-between gap-6">
