@@ -68,6 +68,10 @@ export const metadata: Metadata = {
       es: `${siteUrl}/es`,
     },
   },
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+  },
   robots: {
     index: true,
     follow: true,
@@ -90,7 +94,7 @@ function generateOrganizationJsonLd() {
     "@id": `${siteUrl}/#organization`,
     name: "Tortilleria El Rancherito",
     url: siteUrl,
-    logo: `${siteUrl}/images/logo.png`,
+    logo: `${siteUrl}/logos/logo-circle.png`,
     description:
       "Authentic Mexican tortilleria and taqueria serving fresh handmade tortillas, street tacos, tamales, barbacoa, carnitas, and traditional Mexican groceries in Texas.",
     sameAs: [social.instagram, social.facebook, social.tiktok],
