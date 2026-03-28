@@ -22,14 +22,23 @@ export default function LocationPage({ locationSlug, locale }: LocationPageProps
   const faqs = locationSlug === 'gun-barrel-city' ? gbcFaqs : redOakFaqs;
 
   // Hours summary for details bar
-  const hoursAreUniform = location.hours.every(
+  const hasClosed = location.hours.some((h) => h.open === 'Closed');
+  const hoursAreUniform = !hasClosed && location.hours.every(
     (h) => h.open === '7:00 AM' && h.close === '7:00 PM'
   );
-  const hoursSummary = hoursAreUniform
-    ? `${locale === 'es' ? 'Abierto Todos los D\u00edas' : 'Open Daily'} 7AM-7PM`
-    : locale === 'es'
-      ? 'Lun-Vie 7AM-7PM, S\u00e1b 7AM-6PM, Dom 7AM-3PM'
+
+  let hoursSummary: string;
+  if (hoursAreUniform) {
+    hoursSummary = `${locale === 'es' ? 'Abierto Todos los Días' : 'Open Daily'} 7AM-7PM`;
+  } else if (locationSlug === 'gun-barrel-city') {
+    hoursSummary = locale === 'es'
+      ? 'Lun-Mar, Jue-Sáb 7AM-7PM, Dom 7AM-3PM, Mié Cerrado'
+      : 'Mon-Tue, Thu-Sat 7AM-7PM, Sun 7AM-3PM, Wed Closed';
+  } else {
+    hoursSummary = locale === 'es'
+      ? 'Lun-Vie 7AM-7PM, Sáb 7AM-6PM, Dom 7AM-3PM'
       : 'Mon-Fri 7AM-7PM, Sat 7AM-6PM, Sun 7AM-3PM';
+  }
 
   const fullAddress = `${location.address}, ${location.city}, ${location.state} ${location.zip}`;
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;

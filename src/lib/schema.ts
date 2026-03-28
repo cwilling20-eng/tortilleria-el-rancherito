@@ -67,12 +67,14 @@ function formatHoursForSchema(
     Sunday: "Su",
   };
 
-  return hours.map((h) => {
-    const dayAbbr = dayAbbreviations[h.day] || h.day;
-    const openTime = convertTo24Hour(h.open);
-    const closeTime = convertTo24Hour(h.close);
-    return `${dayAbbr} ${openTime}-${closeTime}`;
-  });
+  return hours
+    .filter((h) => h.open !== 'Closed')
+    .map((h) => {
+      const dayAbbr = dayAbbreviations[h.day] || h.day;
+      const openTime = convertTo24Hour(h.open);
+      const closeTime = convertTo24Hour(h.close);
+      return `${dayAbbr} ${openTime}-${closeTime}`;
+    });
 }
 
 function convertTo24Hour(time12: string): string {
@@ -113,12 +115,14 @@ function buildRestaurantSchema(loc: LocationData) {
       addressCountry: "US",
     },
     geo: undefined, // Add lat/lng when available
-    openingHoursSpecification: loc.hours.map((h) => ({
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: h.day,
-      opens: convertTo24Hour(h.open),
-      closes: convertTo24Hour(h.close),
-    })),
+    openingHoursSpecification: loc.hours
+      .filter((h) => h.open !== 'Closed')
+      .map((h) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: h.day,
+        opens: convertTo24Hour(h.open),
+        closes: convertTo24Hour(h.close),
+      })),
     openingHours: formatHoursForSchema(loc.hours),
     sameAs: [social.instagram, social.facebook, social.tiktok],
     image: `${SITE_URL}${loc.heroImage}`,

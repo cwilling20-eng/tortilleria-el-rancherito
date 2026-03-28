@@ -226,8 +226,7 @@ export default function HomePage() {
                     </a>
                   </p>
                   <p className="text-[#FAF7F2]/60 mt-2">
-                    {t.locations.openDaily}: {gbc.hours[0].open} &ndash;{' '}
-                    {gbc.hours[0].close}
+                    Mon-Tue, Thu-Sat: 7AM&ndash;7PM | Sun: 7AM&ndash;3PM | Wed: Closed
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 mt-6">
                     <a
