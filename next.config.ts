@@ -13,6 +13,15 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/locattions',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
