@@ -314,7 +314,7 @@ function MenuSection({
 
         {/* Sticky category nav */}
         <div
-          className="sticky top-[calc(5rem+64px)] z-20 bg-light/80 backdrop-blur-sm border-b border-dark/10 -mx-4 px-4 mb-8"
+          className="sticky top-36 md:top-[calc(9rem+56px)] z-20 bg-light/80 backdrop-blur-sm border-b border-dark/10 -mx-4 px-4 mb-8"
           ref={navRef}
         >
           <div className="flex md:flex-wrap overflow-x-auto scrollbar-hide gap-1 py-2 -mx-1">
@@ -343,7 +343,7 @@ function MenuSection({
             key={cat.id}
             id={cat.id}
             ref={(el) => setCategoryRef(cat.id, el)}
-            className="scroll-mt-[calc(5rem+64px+60px)] mb-12"
+            className="scroll-mt-[calc(5rem+64px+60px)] md:scroll-mt-[calc(9rem+56px+60px)] mb-12"
           >
             {/* Banner image */}
             {cat.bannerImage && (
