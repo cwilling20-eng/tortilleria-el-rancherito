@@ -4,6 +4,8 @@ export interface MenuItem {
   price: string;
   description?: string;
   descriptionEs?: string; // SPANISH — REVIEW WITH NATIVE SPEAKER BEFORE LAUNCH
+  gbcDescription?: string;
+  gbcDescriptionEs?: string;
   isSignature?: boolean;
   modifiers?: string;
 }
@@ -147,6 +149,8 @@ export const menuCategories: MenuCategory[] = [
         price: '$2.25',
         description: 'Pork, Chicken, or Bean/Cheese/Jalapeño.',
         descriptionEs: 'Puerco, Pollo, o Frijol/Queso/Jalapeño.',
+        gbcDescription: 'Pork or Chicken.',
+        gbcDescriptionEs: 'Puerco o Pollo.',
         isSignature: true,
       },
       {
@@ -155,6 +159,8 @@ export const menuCategories: MenuCategory[] = [
         price: '$13.00',
         description: 'Pork, Chicken, or Bean/Cheese/Jalapeño.',
         descriptionEs: 'Puerco, Pollo, o Frijol/Queso/Jalapeño.',
+        gbcDescription: 'Pork or Chicken.',
+        gbcDescriptionEs: 'Puerco o Pollo.',
       },
       {
         name: 'Tamales (Dozen)',
@@ -162,6 +168,8 @@ export const menuCategories: MenuCategory[] = [
         price: '$22.00',
         description: 'Pork, Chicken, or Bean/Cheese/Jalapeño.',
         descriptionEs: 'Puerco, Pollo, o Frijol/Queso/Jalapeño.',
+        gbcDescription: 'Pork or Chicken.',
+        gbcDescriptionEs: 'Puerco o Pollo.',
       },
     ],
   },
@@ -299,17 +307,17 @@ export const menuCategories: MenuCategory[] = [
       {
         name: 'Mexican Coke (Glass Bottle)',
         nameEs: 'Coca-Cola Mexicana (Botella de Vidrio)',
-        price: '[CLIENT: Add pricing before launch]',
+        price: '$3.25',
       },
       {
         name: 'Jarritos',
         nameEs: 'Jarritos',
-        price: '[CLIENT: Add pricing before launch]',
+        price: '$2.75',
       },
       {
-        name: 'Mexican Sodas',
-        nameEs: 'Refrescos Mexicanos',
-        price: '[CLIENT: Add pricing before launch]',
+        name: 'Aguas Frescas',
+        nameEs: 'Aguas Frescas',
+        price: '$5.50',
       },
     ],
   },

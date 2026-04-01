@@ -96,7 +96,13 @@ export default function Footer({ locale }: FooterProps) {
                 </a>
               </p>
               <p className="text-light/60">
-                {locale === 'es' ? 'Abierto Todos los D\u00edas' : 'Open Daily'} 7AM-7PM
+                {locale === 'es' ? 'Lun-Mar' : 'Mon-Tue'} 7AM-7PM
+                <br />
+                {locale === 'es' ? 'Mié' : 'Wed'}: {locale === 'es' ? 'Cerrado' : 'Closed'}
+                <br />
+                {locale === 'es' ? 'Jue-Sáb' : 'Thu-Sat'} 7AM-7PM
+                <br />
+                {locale === 'es' ? 'Dom' : 'Sun'} 7AM-3PM
               </p>
             </address>
           </div>

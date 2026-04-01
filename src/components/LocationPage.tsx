@@ -58,7 +58,7 @@ export default function LocationPage({ locationSlug, locale }: LocationPageProps
       />
 
       {/* C. Full Menu Section */}
-      <MenuSection locale={locale} t={t} />
+      <MenuSection locale={locale} t={t} locationSlug={locationSlug} />
 
       {/* D. FAQ Section */}
       <FAQSection faqs={faqs} locale={locale} t={t} />
@@ -230,9 +230,11 @@ function LocationDetailsBar({
 function MenuSection({
   locale,
   t,
+  locationSlug,
 }: {
   locale: Locale;
   t: ReturnType<typeof getTranslations>;
+  locationSlug: 'gun-barrel-city' | 'red-oak';
 }) {
   const [activeCategory, setActiveCategory] = useState(menuCategories[0].id);
   const categoryRefs = useRef<Map<string, HTMLElement>>(new Map());
@@ -388,7 +390,10 @@ function MenuSection({
             <div className="space-y-0">
               {cat.items.map((item, idx) => {
                 const itemName = locale === 'es' ? item.nameEs : item.name;
-                const itemDesc = locale === 'es' ? item.descriptionEs : item.description;
+                const isGbc = locationSlug === 'gun-barrel-city';
+                const itemDesc = isGbc && item.gbcDescription
+                  ? (locale === 'es' ? item.gbcDescriptionEs : item.gbcDescription)
+                  : (locale === 'es' ? item.descriptionEs : item.description);
                 const itemPrice = locale === 'es' && item.price === 'Market Price' ? 'Precio del d\u00eda' : item.price;
 
                 return (
