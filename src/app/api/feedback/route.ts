@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const WEBHOOK_URL = 'https://exponentmarketing.app.n8n.cloud/webhook/google-review-check';
+const WEBHOOK_URL = 'https://exponentmarketing.app.n8n.cloud/webhook/review-feedback';
 
 const VALID_LOCATIONS = ['gun-barrel-city', 'red-oak'] as const;
 
@@ -36,11 +36,11 @@ export async function POST(request: NextRequest) {
     }
 
     const webhookPayload = {
-      happy: isPositive,
-      customer_name: body.customer_name.trim(),
-      customer_email: body.customer_email.trim(),
-      customer_phone: body.customer_phone?.trim() || '',
-      ...(isPositive ? {} : { feedback_message: body.feedback_message?.trim() || '' }),
+      experience: isPositive ? 'positive' : 'negative',
+      name: body.customer_name.trim(),
+      email: body.customer_email.trim(),
+      phone: body.customer_phone?.trim() || '',
+      ...(isPositive ? {} : { feedback: body.feedback_message?.trim() || '' }),
       location: body.location,
       client_id: body.client_id,
       timestamp: new Date().toISOString(),
