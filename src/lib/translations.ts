@@ -111,7 +111,7 @@ const translations = {
     // Review Flow
     review: {
       experienceTitle: 'How was your experience at Tortilleria El Rancherito?',
-      greatExperience: 'Great Experience! 😊',
+      greatExperience: 'Great Experience!',
       couldBeBetter: 'Could Be Better',
       thankYou: 'Thank you!',
       shareOnGoogle: 'Would you share your experience on Google?',
@@ -249,7 +249,7 @@ const translations = {
     },
     review: {
       experienceTitle: '¿Cómo fue tu experiencia en Tortilleria El Rancherito?',
-      greatExperience: '¡Excelente! 😊',
+      greatExperience: '¡Excelente!',
       couldBeBetter: 'Podría mejorar',
       thankYou: '¡Gracias!',
       shareOnGoogle: '¿Compartirías tu experiencia en Google?',
