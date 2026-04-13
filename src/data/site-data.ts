@@ -44,6 +44,8 @@ export interface LocationData {
   zip: string;
   orderUrl: string;
   googleBusinessUrl: string;
+  googleReviewUrl: string;
+  clientId: string;
   heroImage: string;
   isNew?: boolean;
   openedDate?: string;
@@ -62,6 +64,8 @@ export const locations: Record<string, LocationData> = {
     zip: '75156',
     orderUrl: 'https://gunbarrelcity.tortilleriaelrancherito.com/',
     googleBusinessUrl: 'https://share.google/2lHJ9oXRiJ2NQqYkw',
+    googleReviewUrl: 'https://share.google/CLvzkW8pLOlWRWPCy',
+    clientId: 'Rancherito GB-001',
     heroImage: '/images/tacos.jpg',
     isNew: true,
     openedDate: '2026-02-09',
@@ -86,6 +90,8 @@ export const locations: Record<string, LocationData> = {
     zip: '75156',
     orderUrl: 'https://redoak.tortilleriaelrancherito.com/',
     googleBusinessUrl: 'https://share.google/Vq92EYyDXVhXwJSy3',
+    googleReviewUrl: 'https://share.google/RcR3v8gcNTpRHYD6O',
+    clientId: 'Rancherito RO-001',
     heroImage: '/images/fajitas.jpg',
     hours: [
       { day: 'Sunday', open: '7:00 AM', close: '3:00 PM' },
