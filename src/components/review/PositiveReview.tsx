@@ -3,7 +3,6 @@
 import { useState, FormEvent } from 'react';
 import { Locale, getTranslations } from '@/lib/translations';
 import { locations } from '@/data/site-data';
-import DiscountCodeDisplay from './DiscountCodeDisplay';
 
 interface PositiveReviewProps {
   locationSlug: string;
@@ -103,8 +102,22 @@ export default function PositiveReview({ locationSlug, locale }: PositiveReviewP
           {/* Accent stripe divider */}
           <div className="accent-stripe-wide mx-auto mb-8" />
 
-          {/* Discount code card */}
-          <DiscountCodeDisplay locale={locale} />
+          {/* Check your email card */}
+          <div className="rounded-2xl bg-[#242220] border border-white/[0.06] p-6 sm:p-8 text-center">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+                <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+            <h2 className="font-display text-lg sm:text-xl text-primary uppercase tracking-wider mb-2">
+              {t.review.checkEmailTitle}
+            </h2>
+            <p className="text-text-on-dark/60 font-body text-sm sm:text-base leading-relaxed">
+              {t.review.checkEmailSubtext}
+            </p>
+          </div>
         </div>
       </section>
     );
