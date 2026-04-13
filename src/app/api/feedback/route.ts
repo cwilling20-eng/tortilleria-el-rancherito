@@ -5,10 +5,11 @@ const WEBHOOK_URL = 'https://exponentmarketing.app.n8n.cloud/webhook/google-revi
 const VALID_LOCATIONS = ['gun-barrel-city', 'red-oak'] as const;
 
 interface FeedbackPayload {
+  happy?: boolean;
   customer_name: string;
   customer_email: string;
   customer_phone?: string;
-  feedback_message: string;
+  feedback_message?: string;
   location: string;
   client_id: string;
 }
@@ -17,6 +18,8 @@ export async function POST(request: NextRequest) {
   try {
     const body: FeedbackPayload = await request.json();
 
+    const isPositive = body.happy === true;
+
     // Server-side validation
     if (!body.customer_name?.trim()) {
       return NextResponse.json({ error: 'Name is required' }, { status: 400 });
@@ -24,7 +27,8 @@ export async function POST(request: NextRequest) {
     if (!body.customer_email?.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.customer_email)) {
       return NextResponse.json({ error: 'Valid email is required' }, { status: 400 });
     }
-    if (!body.feedback_message?.trim()) {
+    // Message only required for negative feedback
+    if (!isPositive && !body.feedback_message?.trim()) {
       return NextResponse.json({ error: 'Message is required' }, { status: 400 });
     }
     if (!VALID_LOCATIONS.includes(body.location as typeof VALID_LOCATIONS[number])) {
@@ -32,15 +36,15 @@ export async function POST(request: NextRequest) {
     }
 
     const webhookPayload = {
-      happy: false,
+      happy: isPositive,
       customer_name: body.customer_name.trim(),
       customer_email: body.customer_email.trim(),
       customer_phone: body.customer_phone?.trim() || '',
-      feedback_message: body.feedback_message.trim(),
+      ...(isPositive ? {} : { feedback_message: body.feedback_message?.trim() || '' }),
       location: body.location,
       client_id: body.client_id,
       timestamp: new Date().toISOString(),
-      form_type: 'negative',
+      form_type: isPositive ? 'positive' : 'negative',
     };
 
     // POST to n8n webhook with one retry on failure
