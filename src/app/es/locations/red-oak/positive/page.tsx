@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: '¡Gracias! | Tortilleria El Rancherito - Red Oak',
   description: 'Gracias por tu gran experiencia en Tortilleria El Rancherito en Red Oak. Deja una reseña en Google y recibe 10% de descuento.',
   alternates: {
-    canonical: `${siteUrl}/locations/red-oak/positive`,
+    canonical: `${siteUrl}/es/locations/red-oak/positive`,
     languages: {
       en: `${siteUrl}/locations/red-oak/positive`,
       es: `${siteUrl}/es/locations/red-oak/positive`,

@@ -63,10 +63,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: siteUrl,
-    languages: {
-      en: siteUrl,
-      es: `${siteUrl}/es`,
-    },
   },
   icons: {
     icon: "/icon.png",
@@ -132,9 +128,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bebasNeue.variable} ${montserrat.variable}`}>
       <head>
-        <link rel="alternate" hrefLang="en" href={siteUrl} />
-        <link rel="alternate" hrefLang="es" href={`${siteUrl}/es`} />
-        <link rel="alternate" hrefLang="x-default" href={siteUrl} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: '¿Cómo fue tu experiencia? | Tortilleria El Rancherito - Gun Barrel City',
   description: 'Cuéntanos sobre tu experiencia en Tortilleria El Rancherito en Gun Barrel City, TX.',
   alternates: {
-    canonical: `${siteUrl}/locations/gun-barrel-city/experience`,
+    canonical: `${siteUrl}/es/locations/gun-barrel-city/experience`,
     languages: {
       en: `${siteUrl}/locations/gun-barrel-city/experience`,
       es: `${siteUrl}/es/locations/gun-barrel-city/experience`,

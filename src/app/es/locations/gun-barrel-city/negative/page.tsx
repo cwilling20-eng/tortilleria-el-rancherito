@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Comparte tus comentarios | Tortilleria El Rancherito - Gun Barrel City',
   description: 'Queremos escucharte. Comparte tus comentarios sobre tu experiencia en Tortilleria El Rancherito en Gun Barrel City, TX.',
   alternates: {
-    canonical: `${siteUrl}/locations/gun-barrel-city/negative`,
+    canonical: `${siteUrl}/es/locations/gun-barrel-city/negative`,
     languages: {
       en: `${siteUrl}/locations/gun-barrel-city/negative`,
       es: `${siteUrl}/es/locations/gun-barrel-city/negative`,

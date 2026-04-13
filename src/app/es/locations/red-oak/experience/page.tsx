@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: '¿Cómo fue tu experiencia? | Tortilleria El Rancherito - Red Oak',
   description: 'Cuéntanos sobre tu experiencia en Tortilleria El Rancherito en Red Oak, TX.',
   alternates: {
-    canonical: `${siteUrl}/locations/red-oak/experience`,
+    canonical: `${siteUrl}/es/locations/red-oak/experience`,
     languages: {
       en: `${siteUrl}/locations/red-oak/experience`,
       es: `${siteUrl}/es/locations/red-oak/experience`,
