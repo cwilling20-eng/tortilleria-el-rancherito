@@ -55,7 +55,7 @@ export default function HomePageEs() {
             loop
             playsInline
             poster="/images/tacos.jpg"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-center"
           >
             <source src={videos.hero} type="video/mp4" />
           </video>

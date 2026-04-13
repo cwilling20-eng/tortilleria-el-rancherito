@@ -25,7 +25,7 @@ export const colors = {
 
 // ── Cloudinary Video URLs ──
 export const videos = {
-  hero: 'https://res.cloudinary.com/ddhsjhqsg/video/upload/v1773008494/el-rancherito/videos/hero-video.mp4',
+  hero: '/videos/hero-vid.mp4',
   video2: 'https://res.cloudinary.com/ddhsjhqsg/video/upload/v1773008500/el-rancherito/videos/video-2.mp4',
   video3: 'https://res.cloudinary.com/ddhsjhqsg/video/upload/v1773008505/el-rancherito/videos/video-3.mp4',
   video4: 'https://res.cloudinary.com/ddhsjhqsg/video/upload/v1773008511/el-rancherito/videos/video-4.mp4',
